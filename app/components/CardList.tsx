@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 import * as Haptics from 'expo-haptics';
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { NativeScrollEvent, NativeSyntheticEvent, ScrollView, View } from 'react-native';
-import { HandlerStateChangeEvent } from 'react-native-gesture-handler';
+import { NativeScrollEvent, NativeSyntheticEvent, View } from 'react-native';
+import { HandlerStateChangeEvent, ScrollView } from 'react-native-gesture-handler';
 
 import Card, { cardMargin, cardWidth } from './Card';
 import SliderIndicator from './SliderIndicator';
@@ -90,7 +90,7 @@ const CardList = () => {
       <ScrollView
         style={{ paddingHorizontal: cardMargin }}
         ref={scrollRef}
-        // onCancelled={onCancelled}
+        onCancelled={onCancelled}
         // onTouchCancel={onCancelled}
         snapToOffsets={snapToOffsets}
         decelerationRate="fast"
